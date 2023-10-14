@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `ryan-s-lee.github.io`,
+    description: `Personal site for Ryan Lee, Computer Engineering student at UCSD`,
+    author: `@ryan-s-lee`,
+    siteUrl: `https://ryan-s-lee.github.io`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -39,5 +39,13 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`
+      }
+    },
+    "gatsby-plugin-mdx",
   ],
 }

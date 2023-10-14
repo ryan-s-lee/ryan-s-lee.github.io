@@ -1,0 +1,12 @@
+.navlist {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    column-gap: 30px;
+    justify-content: left;
+    padding: 0px;
+}
+
+.navlist > li {
+    /* margin: 2px 30px; */
+}

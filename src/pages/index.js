@@ -1,128 +1,56 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+const IndexPage = () => {
+  return (
+    <Layout>
+      <h2>About Me</h2>
+      <p>
+        I'm an undergraduate at UC San Diego with experience in web development.
+        I'm also interested in computer systems, having taken coursework in OS
+        design and tutored frequently for Computer Systems classes. Artificial
+        intelligence and deep learning has been another interest of mine since 
+        high school. Basically, I want to learn everything there is to know about 
+        computation!
       </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+      <h2>Skills</h2>
+      <p className="hanging-indent">
+        <strong>Languages:</strong> Python, C/C++/C#, Java, JS/TS, ARM, x86, 
+        Bash, HTML/CSS, GraphQL, SQL
+      </p>
+      <p className="hanging-indent">
+        <strong>Libraries:</strong> React, Numpy
+      </p>
+      <p className="hanging-indent">
+        <strong>Frameworks:</strong> Unity Game Engine, GatsbyJS, Svelte, NextJS, Django
+      </p>
+      <p className="hanging-indent">
+        <strong>Concepts:</strong> REST Frameworks/HTTP, Data structures and 
+        Algorithms, Computer Systems (especially Linux but also Windows), 
+        OS Design, Artificial Intelligence
+      </p>
+      <h2>My Work</h2>
+      <p>
+        <ul>
+          <li>
+            <a href="https://portal.hknucsd.com/">Portal for HKN @ UCSD</a>. 
+            Developed with Django Rest Framework and Svelte. Tracked
+            guest and member activity during events and provided a secure interface 
+            for administrative duties.
+          </li>
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+        </ul>
+      </p>
+      <h2>Other Stuff</h2>
+      <h3>Music I like</h3>
+      <p>Prog rock, mainly. I have some background in classical music performance
+        and theory, so I really admire that mix of technical ability, and smart
+        rhythms. But it also just sounds really cool.
+      </p>
+    </Layout>
+  );
+}
 
+export const Head = () => <Seo title="Home"/>
 export default IndexPage
